@@ -1,2 +1,9 @@
 # Exploration of probability Package for Haskell
-Implementations of the probability package for Haskell (Course Project for CS 421 at UIUC)  
+
+This repo contains an exploration exercise of the probability package in Haskell. The package was developed by... 
+
+# Background on Package
+
+
+# Monty Hall Problem
+
