@@ -7,9 +7,9 @@ The original paper for the package can be found here: http://web.engr.oregonstat
 
 With the use of this package, we can leverage the advantages of Haskell to solve discrete probability problems with efficent and concise programs. I have explored the package contributing the following files.
 
-1) Monthy Hall Problem with Additional Door: 
+1) Monthy Hall Problem with Additional Door: I modified the original Monty Hall problem by adding an additional door. 
 
-2) Coin Flip 
+2) Coin Flip: I added a file that simulates the probability distributions of flipping a two sided coin. 
 
 ## Overview and Background
 
