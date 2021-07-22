@@ -13,7 +13,7 @@ With the use of this package, we can leverage the advantages of Haskell to solve
 
 ## Set Up and Background
 
-This repo contains two files that can be loaded by the user: "Coin.hs" and "MontyHallAdj.hs". In order to use these files, the probaility Package for Haskell from Hackage will need to be imported. I recommend using Cabal. 
+This repo contains two files that can be loaded by the user: "Coin.hs" and "MontyHallAdj.hs". In order to use these files, the probaility Package for Haskell from Hackage will need to be imported. I recommend using Cabal to import the package. 
 
 ## Monty Hall Problem
 
