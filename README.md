@@ -43,6 +43,32 @@ coin :: Dist Coin
 coin = Dist.uniform [1..2]
 ```
 
+```
+twoHeads :: Probability
+twoHeads = (==(1,1)) ?? twoCoins
+```
 
 
+```
+ghci> twoHeads
+1 % 4
+```
+
+
+
+```
+{- |
+@heads p n@ computes the probability of getting
+p heads (@>1@, @==2@, ...) when flipping n coins
+-}
+heads :: (Int -> Bool) -> Int -> Probability
+heads p n = (p . length . filter (==1)) ?? coins n
+```
+
+
+```
+ghci> heads (>=2) 4
+11 % 16
+
+```
 
