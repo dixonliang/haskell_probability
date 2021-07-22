@@ -13,7 +13,9 @@ With the use of this package, we can leverage the advantages of Haskell to solve
 
 ## Set Up and Background
 
-This repo contains two files that can be loaded by the user: "Coin.hs" and "MontyHallAdj.hs". In order to use these files, the probaility Package for Haskell from Hackage will need to be imported. I recommend using Cabal to import the package. 
+This repo contains two files that can be loaded by the user: "Coin.hs" and "MontyHallAdj.hs". In order to use these files, the probaility Package for Haskell from Hackage will need to be imported. I recommend using Cabal to import the package and set up the GHCI environment. 
+
+The foundation of this package leverages the use of Monads. Independent events can be modeled by simply the product of two probabilities, but for events where one event depends on another.. 
 
 ## Monty Hall Problem
 
@@ -34,8 +36,12 @@ With the additional door, the game
  
 ## Coin Flip
 
-In the probability Package, one of the files is Dice which replicates the uniform distribution of rolling dice or die. 
+In the probability Package, one of the programs included is Dice which replicates the uniform distribution of rolling dice or die. I used this template to create a similar program, but for flipping a coin. As with the Dice program, a uniform distribution is applied in the constructor. Instead of modeling six sides, we simply model the two sides of a coin, with 1 being Heads and 2 being Tails. 
 
+```
+coin :: Dist Coin
+coin = Dist.uniform [1..2]
+```
 
 
 
