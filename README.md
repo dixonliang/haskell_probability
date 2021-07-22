@@ -17,7 +17,7 @@ This repo contains two files that can be loaded by the user: "Coin.hs" and "Mont
 
 ## Monty Hall Problem
 
-A popular problem in probability theory is called the "Monty Hall Problem". 
+A popular problem in probability theory is called the "Monty Hall Problem". In this problem, a contestant is 
 
 #### Additional Doors
 
@@ -30,9 +30,11 @@ data Door = A | B | C | D
 doors :: [Door]
 doors = [A,B,C,D]
 ```
-
-
+With the additional door, the game  
+ 
 ## Coin Flip
+
+In the probability Package, one of the files is Dice which replicates the uniform distribution of rolling dice or die. 
 
 
 
