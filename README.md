@@ -49,7 +49,7 @@ firstChoice :: Dist Outcome
 firstChoice = Dist.uniform [Win,Lose,Lose,Lose]
 ```
 
-With the additional door, the game choices changes to the below. 
+With the additional door, the game evaluation of switching changes to the below. 
 
 ```
 firstChoice
