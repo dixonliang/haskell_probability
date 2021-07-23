@@ -17,11 +17,17 @@ This repo contains two files that can be loaded by the user: "Coin.hs" and "Mont
 
 The package models probabilitistic events as collection of all possible values as "**Dist**". This newtype can  be thought of as a sample space of some probabilistic event. Independent events can be modeled by simply the product of two probabilities which is done by a lifting function in the package. For events that are not independent, the package leverages the use of Monads. For example, if event b depends on event a, where the first event a is of type "**Dist**", event b is a function of type "**a -> Dist b**" which is simply a bind operation where "**Dist**" is a monad. With the use of monads, modeling probablistic events where the state of the collection changes (selections dependent on previous seletions) is possible. More detail in how the Monad is set up is contained in the paper. 
 
+Another type that the package introducts is **"Trans"** or transitions which maps values to distributions. This will be used in the Monty Hall Problem walkthrough. 
+
+```
+type Trans a = a -> Dist a
+```
+
 ## Monty Hall Problem
 
 A popular problem in probability theory is called the "Monty Hall Problem". In this problem, a contestant on a game show picks a door out of a number of doors (the traditional problem is three doors). Behind one of these doors is a car  and the behind the rest of the others are goats. The game show host then reveals one of the doors that the contestant has not picked and reveals a goat. The contestant then has the opportunity to pswap for another door. The contestant is also given the choice to switch the door he has chosen. Should the contestant switch? The answer to this problem is yes (the contestant should switch doors). The answer is yes. In fact, the contestant raises his or her probaility of selecting the correct door by 1/3. 
 
-The package actually has two ways of modeling this: 1) Creating "Doors" which each hold a state. 2) Creating a basic uniform distribution of the outcomes. 
+The package actually has two ways of modeling this: 1) Creating "Doors" which each hold a state, then modeling each step. 2) Creating a basic uniform distribution of the outcomes and capturing a transition on outcomes. 
 
 ```
 data Door = A | B | C 
@@ -35,7 +41,14 @@ data Outcome = Win | Lose
 firstChoice :: Dist Outcome
 firstChoice = uniform [Win,Lose,Lose]
 ```
-The paper goes through the modeling through the use of "Doors" in more detail. 
+The paper goes through the modeling through the use of "Doors" in much more detail. For the 2), the package uses the "Trans" type mentioned earlier on the possible Outcomes. 
+
+```
+switch :: Trans Outcome
+switch Win = certainly Lose
+switch Lose = certainly Win
+```
+Through this modeling, we can see the results below. 
 
 ```
 firstChoice
