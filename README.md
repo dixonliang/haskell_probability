@@ -1,11 +1,11 @@
-# Additions to probability Package for Haskell
+# Exploration of probability Package for Haskell and Additions
 
-This repo contains a walkthrough of two additions I made to the probability package in Haskell. The package was developed by Martin Erwig and Steve Kollmansberger of Oregon State University. 
+This repo contains a exploration exercise of the probability package in Haskell. I have also contributed two additional files with a quick walkthrough with the use of the package. The package was developed by Martin Erwig and Steve Kollmansberger of Oregon State University. 
 
 The documentation for the package can be found here: https://hackage.haskell.org/package/probability
 The original paper for the package can be found here: http://web.engr.oregonstate.edu/~erwig/papers/PFP_JFP06.pdf
 
-With the use of this package, we can leverage the advantages of Haskell to solve discrete probability problems with efficent and concise programs. I made the additions with the following files.
+With the use of this package, we can leverage the advantages of Haskell to solve discrete probability problems with efficent and concise programs. I made two contributions with the following files.
 
 1) **Monty Hall Problem with Additional Door**: I modified the original Monty Hall problem by adding an additional door to the constructor. This file behaves exactly as outlined in the documentation. 
 
@@ -29,7 +29,7 @@ type Trans a = a -> Dist a
 
 A popular problem in probability theory is called the "Monty Hall Problem". In this problem, a contestant on a game show picks a door out of a number of doors (the traditional problem is three doors). Behind one of these doors is a car  and behind the rest of the others are goats. The game show host then reveals one of the doors that the contestant has not picked and reveals a goat. The contestant then has the opportunity to swap for another door. The contestant is also given the choice to switch the door he has chosen. 
 
-**Should the contestant switch? **
+**Should the contestant switch?**
 
 The answer is **yes** (the contestant should switch doors). In fact, the contestant raises his or her probaility of selecting the correct door by 1/3. 
 
