@@ -21,7 +21,7 @@ The package models probabilitistic events as collection of all possible values a
 
 A popular problem in probability theory is called the "Monty Hall Problem". In this problem, a contestant on a game show picks a door out of a number of doors (the traditional problem is three doors). Behind one of these doors is a car  and the behind the rest of the others are goats. The game show host then reveals one of the doors that the contestant has not picked and reveals a goat. The contestant then has the opportunity to pswap for another door. The contestant is also given the choice to switch the door he has chosen. Should the contestant switch?  
 
-The answer to this problem is yes. 
+The answer to this problem is yes (the contestant should switch doors). 
 
 #### Additional Doors
 
