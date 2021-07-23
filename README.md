@@ -15,7 +15,9 @@ With the use of this package, we can leverage the advantages of Haskell to solve
 
 This repo contains two files that can be loaded by the user: "Coin.hs" and "MontyHallAdj.hs". In order to use these files, the probaility Package for Haskell from Hackage will need to be imported. I recommend using Cabal to import the package and set up the ghci environment. 
 
-The package models probabilitistic events as collection of all possible values as "**Dist**". This newtype can  be thought of as a sample space of some probabilistic event. Independent events can be modeled by simply the product of two probabilities which is done by a lifting function in the package. For events that are not independent, the package leverages the use of Monads. For example, if event b depends on event a, where the first event a is of type "**Dist**", event b is a function of type "**a -> Dist b**" which is simply a bind operation where "**Dist**" is a monad. With the use of monads, modeling probablistic events where the state of the collection changes (selections dependent on previous seletions) is possible. More detail in how the Monad is set up is contained in the paper. 
+The package models probabilitistic events as collection of all possible values as "**Dist**". This newtype can  be thought of as a sample space of some probabilistic event. Independent events can be modeled by simply the product of two probabilities which is done by a lifting function in the package. 
+
+For events that are not independent, the package leverages the use of Monads. For example, if event b depends on event a, where the first event a is of type "**Dist**", event b is a function of type "**a -> Dist b**" which is simply a bind operation where "**Dist**" is a monad. With the use of monads, modeling probablistic events where the state of the collection changes (selections dependent on previous seletions) is possible. More detail in how the Monad is set up is contained in the paper. 
 
 Another type that the package introducts is **"Trans"** or transitions which maps values to distributions. This will be used in the Monty Hall Problem walkthrough. 
 
