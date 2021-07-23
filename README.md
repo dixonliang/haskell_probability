@@ -33,6 +33,9 @@ data Door = A | B | C | D
 
 doors :: [Door]
 doors = [A,B,C,D]
+
+firstChoice :: Dist Outcome
+firstChoice = Dist.uniform [Win,Lose,Lose,Lose]
 ```
 With the additional door, the game choices changes to 
  
