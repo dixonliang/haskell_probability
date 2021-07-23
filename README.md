@@ -21,16 +21,33 @@ The package models probabilitistic events as collection of all possible values a
 
 A popular problem in probability theory is called the "Monty Hall Problem". In this problem, a contestant on a game show picks a door out of a number of doors (the traditional problem is three doors). Behind one of these doors is a car  and the behind the rest of the others are goats. The game show host then reveals one of the doors that the contestant has not picked and reveals a goat. The contestant then has the opportunity to pswap for another door. The contestant is also given the choice to switch the door he has chosen. Should the contestant switch? The answer to this problem is yes (the contestant should switch doors). The answer is yes. In fact, the contestant raises his or her probaility of selecting the correct door by 1/3. 
 
+The package models this by creating "Doors" which each hold a state. 
+
+```
+data Door = A | B | C 
+            deriving (Eq,Ord,Show)
+
+doors :: [Door]
+doors = [A,B,C]
+```
+```
+data Outcome = Win | Lose
+firstChoice :: Dist Outcome
+firstChoice = uniform [Win,Lose,Lose]
+```
 
 
 
+```
+firstChoice
+fromFreqs [(Lose, 66.7%),(Win, 33.3%)]
 
+eval stay
+fromFreqs [(Lose, 66.7%),(Win, 33.3%)]
 
-
-
-
-
-
+eval switch
+fromFreqs [(Lose, 33.3%),(Win, 66.7%)]
+```
 
 The original paper for the package does a walk through of this as well. 
 
@@ -57,6 +74,9 @@ With the additional door, the game evaluation of switching changes to the below.
 
 ```
 firstChoice
+fromFreqs [(Lose, 75.0%),(Win, 25.0%)]
+
+eval stay
 fromFreqs [(Lose, 75.0%),(Win, 25.0%)]
 
 eval switch
