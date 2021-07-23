@@ -104,4 +104,4 @@ ghci> heads (>=2) 4
 11 % 16
 
 ```
-If interested, we can model other events using coin flips following this basic guideline. Some further developments could be adding a program that compies the probability of getting a certain number of heads **and** tails or combining the Coin and Dice programs. 
+We can continue building events using coin flips following this basic framework. Some further development ideas include a program that compies the probability of getting a certain number of heads **and** tails or combining the Coin and Dice programs. 
