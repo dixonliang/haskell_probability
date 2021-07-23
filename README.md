@@ -15,11 +15,13 @@ With the use of this package, we can leverage the advantages of Haskell to solve
 
 This repo contains two files that can be loaded by the user: "Coin.hs" and "MontyHallAdj.hs". In order to use these files, the probaility Package for Haskell from Hackage will need to be imported. I recommend using Cabal to import the package and set up the ghci environment. 
 
-The foundation of this package leverages the use of Monads. Independent events can be modeled by simply the product of two probabilities, but for events where one event depends on another.. 
+The package models probabilitistic events as collection of all possible values as "Dist". This newtype can  be thought of as a sample space of some probabilistic event. Independent events can be modeled by simply the product of two probabilities which is done by a lifting function in the package. For events that are not independent, the package leverages the use of Monads. For example, if event b depends on event a, where the first event a is of type "Dist", event b is a function of type "a -> Dist b" which is simply a bind operation where "Dist" is a monad. With the use of monads, modeling probablistic events where the state changes (selections dependent on previous seletions) is possible. 
 
 ## Monty Hall Problem
 
 A popular problem in probability theory is called the "Monty Hall Problem". In this problem, a contestant on a game show picks a door out of a number of doors (the traditional problem is three doors). Behind one of these doors is a car  and the behind the rest of the others are goats. The game show host then reveals one of the doors that the contestant has not picked and reveals a goat. The contestant then has the opportunity to pswap for another door. The contestant is also given the choice to switch the door he has chosen. Should the contestant switch?  
+
+The answer to this problem is yes. 
 
 #### Additional Doors
 
@@ -32,7 +34,7 @@ data Door = A | B | C | D
 doors :: [Door]
 doors = [A,B,C,D]
 ```
-With the additional door, the game  
+With the additional door, the game choices changes to 
  
 ## Coin Flip
 
