@@ -19,7 +19,7 @@ The foundation of this package leverages the use of Monads. Independent events c
 
 ## Monty Hall Problem
 
-A popular problem in probability theory is called the "Monty Hall Problem". In this problem, a contestant is 
+A popular problem in probability theory is called the "Monty Hall Problem". In this problem, a contestant on a game show picks a door out of a number of doors (the traditional problem is three doors). Behind one of these doors is a car  and the behind the rest of the others are goats. The game show host then reveals one of the doors that the contestant has not picked and reveals a goat. The contestant then has the opportunity to pswap for another door. The contestant is also given the choice to switch the door he has chosen. Should the contestant switch?  
 
 #### Additional Doors
 
@@ -56,7 +56,7 @@ twoCoins = liftM2 (,) coin coin
 ghci> twoHeads
 1 % 4
 ```
-Things get more interesting when we look at "heads". This program will output the probality of getting a certain number of heads given a number of coin flips. As per the example below, the probablity of getting an outcome of at least 2 heads from flipping 4 coins is 11 / 16. 
+Things get more interesting when we look at "heads". This program will output the probality of getting a certain number of heads (or tails) given a number of coin flips. The underlying code uses "length" and "filter" from prelude, as well as our created class "coins". As per the example below, the probablity of getting an outcome of at least 2 heads from flipping 4 coins is 11 / 16. 
 
 ```
 {- |
