@@ -56,7 +56,7 @@ twoCoins = liftM2 (,) coin coin
 ghci> twoHeads
 1 % 4
 ```
-Things get more interesting when we look at "heads". 
+Things get more interesting when we look at "heads". This program will output the probality of getting a certain number of heads given a number of coin flips. 
 
 
 ```
