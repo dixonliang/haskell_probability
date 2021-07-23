@@ -27,7 +27,11 @@ type Trans a = a -> Dist a
 
 ## Monty Hall Problem
 
-A popular problem in probability theory is called the "Monty Hall Problem". In this problem, a contestant on a game show picks a door out of a number of doors (the traditional problem is three doors). Behind one of these doors is a car  and the behind the rest of the others are goats. The game show host then reveals one of the doors that the contestant has not picked and reveals a goat. The contestant then has the opportunity to pswap for another door. The contestant is also given the choice to switch the door he has chosen. Should the contestant switch? The answer to this problem is yes (the contestant should switch doors). The answer is yes. In fact, the contestant raises his or her probaility of selecting the correct door by 1/3. 
+A popular problem in probability theory is called the "Monty Hall Problem". In this problem, a contestant on a game show picks a door out of a number of doors (the traditional problem is three doors). Behind one of these doors is a car  and behind the rest of the others are goats. The game show host then reveals one of the doors that the contestant has not picked and reveals a goat. The contestant then has the opportunity to swap for another door. The contestant is also given the choice to switch the door he has chosen. 
+
+**Should the contestant switch? **
+
+The answer is **yes** (the contestant should switch doors). In fact, the contestant raises his or her probaility of selecting the correct door by 1/3. 
 
 The package actually has two ways of modeling this: 1) Creating "Doors" which each hold a state, then modeling each step. 2) Creating a basic uniform distribution of the outcomes and capturing a transition on outcomes. 
 
@@ -50,7 +54,7 @@ switch :: Trans Outcome
 switch Win = certainly Lose
 switch Lose = certainly Win
 ```
-Through this modeling, we can see the results below. 
+Through this modeling, we can see the results below. A statistical explanation for why this is the case can be found here: https://brilliant.org/wiki/monty-hall-problem/
 
 ```
 firstChoice
