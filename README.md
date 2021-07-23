@@ -7,13 +7,13 @@ The original paper for the package can be found here: http://web.engr.oregonstat
 
 With the use of this package, we can leverage the advantages of Haskell to solve discrete probability problems with efficent and concise programs. I have explored the package and contributed additions with the following files.
 
-1) Monty Hall Problem with Additional Door: I modified the original Monty Hall problem by adding an additional door to the constructor. This file behaves exactly as outlined in the documentation. 
+1) **Monty Hall Problem with Additional Door**: I modified the original Monty Hall problem by adding an additional door to the constructor. This file behaves exactly as outlined in the documentation. 
 
-2) Coin Flip: I added a file that simulates the probability distributions of flipping a two sided coin. This file is based on the Dice program included in the package. 
+2) **Coin Flip**: I added a file that simulates the probability distributions of flipping a two sided coin. This file is based on the Dice program included in the package. 
 
 ## Set Up and Background
 
-This repo contains two files that can be loaded by the user: "Coin.hs" and "MontyHallAdj.hs". In order to use these files, the probaility Package for Haskell from Hackage will need to be imported. I recommend using Cabal to import the package and set up the ghci environment. 
+This repo contains two files that can be loaded by the user: "**Coin.hs**" and "**MontyHallAdj.hs**". In order to use these files, the probaility Package for Haskell from Hackage will need to be imported. I recommend using Cabal to import the package and set up the ghci environment. 
 
 The package models probabilitistic events as collection of all possible values as "**Dist**". This newtype can  be thought of as a sample space of some probabilistic event. Independent events can be modeled by simply the product of two probabilities which is done by a lifting function in the package. 
 
