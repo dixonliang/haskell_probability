@@ -19,20 +19,24 @@ The package models probabilitistic events as collection of all possible values a
 
 ## Monty Hall Problem
 
-A popular problem in probability theory is called the "Monty Hall Problem". In this problem, a contestant on a game show picks a door out of a number of doors (the traditional problem is three doors). Behind one of these doors is a car  and the behind the rest of the others are goats. The game show host then reveals one of the doors that the contestant has not picked and reveals a goat. The contestant then has the opportunity to pswap for another door. The contestant is also given the choice to switch the door he has chosen. Should the contestant switch?  
-
-The answer to this problem is yes (the contestant should switch doors). 
+A popular problem in probability theory is called the "Monty Hall Problem". In this problem, a contestant on a game show picks a door out of a number of doors (the traditional problem is three doors). Behind one of these doors is a car  and the behind the rest of the others are goats. The game show host then reveals one of the doors that the contestant has not picked and reveals a goat. The contestant then has the opportunity to pswap for another door. The contestant is also given the choice to switch the door he has chosen. Should the contestant switch? The answer to this problem is yes (the contestant should switch doors). The answer is yes. In fact, the contestant raises his or her probaility of selecting the correct door by 1/3. 
 
 
-```
-data Outcome = Win | Lose
-firstChoice :: Dist Outcome
-firstChoice = uniform [Win,Lose,Lose]
-```
+
+
+
+
+
+
+
+
+
+
+The original paper for the package does a walk through of this as well. 
 
 #### Additional Doors
 
-As mentioned in the original paper, it was very easy to change the distribution of the game. This was done by simply adding another door to the "Door" constructor. This was added as door "D". 
+As mentioned in the original paper, it was very easy to change the distribution of the game if we wanted to see the effect of adding another door. This was done by simply adding another door to the "Door" constructor. This was added as door "D". 
 
 ```
 data Door = A | B | C | D
