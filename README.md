@@ -5,7 +5,7 @@ This repo contains an exploration exercise of the probability package in Haskell
 The documentation for the package can be found here: https://hackage.haskell.org/package/probability
 The original paper for the package can be found here: http://web.engr.oregonstate.edu/~erwig/papers/PFP_JFP06.pdf
 
-With the use of this package, we can leverage the advantages of Haskell to solve discrete probability problems with efficent and concise programs. I have explored the package contributing additions to the following files.
+With the use of this package, we can leverage the advantages of Haskell to solve discrete probability problems with efficent and concise programs. I have explored the package and contributed additions with the following files.
 
 1) Monty Hall Problem with Additional Door: I modified the original Monty Hall problem by adding an additional door to the constructor. This file behaves exactly as outlined in the documentation. 
 
@@ -15,7 +15,7 @@ With the use of this package, we can leverage the advantages of Haskell to solve
 
 This repo contains two files that can be loaded by the user: "Coin.hs" and "MontyHallAdj.hs". In order to use these files, the probaility Package for Haskell from Hackage will need to be imported. I recommend using Cabal to import the package and set up the ghci environment. 
 
-The package models probabilitistic events as collection of all possible values as "**Dist**". This newtype can  be thought of as a sample space of some probabilistic event. Independent events can be modeled by simply the product of two probabilities which is done by a lifting function in the package. For events that are not independent, the package leverages the use of Monads. For example, if event b depends on event a, where the first event a is of type "**Dist**", event b is a function of type "**a -> Dist b**" which is simply a bind operation where "**Dist**" is a monad. With the use of monads, modeling probablistic events where the state of the collection changes (selections dependent on previous seletions) is possible. 
+The package models probabilitistic events as collection of all possible values as "**Dist**". This newtype can  be thought of as a sample space of some probabilistic event. Independent events can be modeled by simply the product of two probabilities which is done by a lifting function in the package. For events that are not independent, the package leverages the use of Monads. For example, if event b depends on event a, where the first event a is of type "**Dist**", event b is a function of type "**a -> Dist b**" which is simply a bind operation where "**Dist**" is a monad. With the use of monads, modeling probablistic events where the state of the collection changes (selections dependent on previous seletions) is possible. More detail in how the Monad is set up is contained in the paper. 
 
 ## Monty Hall Problem
 
