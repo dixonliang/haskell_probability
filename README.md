@@ -13,7 +13,7 @@ With the use of this package, we can leverage the advantages of Haskell to solve
 
 ## Set Up and Background
 
-This repo contains two files that can be loaded by the user: "Coin.hs" and "MontyHallAdj.hs". In order to use these files, the probaility Package for Haskell from Hackage will need to be imported. I recommend using Cabal to import the package and set up the GHCI environment. 
+This repo contains two files that can be loaded by the user: "Coin.hs" and "MontyHallAdj.hs". In order to use these files, the probaility Package for Haskell from Hackage will need to be imported. I recommend using Cabal to import the package and set up the ghci environment. 
 
 The foundation of this package leverages the use of Monads. Independent events can be modeled by simply the product of two probabilities, but for events where one event depends on another.. 
 
@@ -36,24 +36,27 @@ With the additional door, the game
  
 ## Coin Flip
 
-In the probability Package, one of the programs included is Dice which replicates the uniform distribution of rolling dice or die. I used this template to create a similar program, but for flipping a coin. As with the Dice program, a uniform distribution is applied in the constructor. Instead of modeling six sides, we simply model the two sides of a coin, with 1 being Heads and 2 being Tails. 
+In the probability Package, one of the programs included is Dice which replicates the uniform distribution of rolling dice or die. I used this template to create a similar program, but for flipping a coin. As with the Dice program, a uniform distribution is applied in the constructor. Instead of modeling six sides of a dice, we simply model the two sides of a coin, with 1 being Heads and 2 being Tails as per below. 
 
 ```
 coin :: Dist Coin
 coin = Dist.uniform [1..2]
 ```
+Similar to the Dice program, we can call for the probaility of "twoHeads" which isn't too interesting but demonstrates the functionality of the program. As seen from the code below, we can see that "twoHeads" is part of the class "Probability". The implementation draws on twoCoins, which is of class "Dist" which we defined earlier. We simply set, these two Coins to "1" which is Heads; of course it would be exactly the same if we want Tails. The probability is then simply done with a lifting function and is just the product of the two, which we see when running ghci is 1/4 (1/2 * 1/2). 
 
 ```
 twoHeads :: Probability
 twoHeads = (==(1,1)) ?? twoCoins
+
+-- | product of independent distributions
+twoCoins :: Dist (Coin,Coin)
+twoCoins = liftM2 (,) coin coin
 ```
-
-
 ```
 ghci> twoHeads
 1 % 4
 ```
-
+Things get more interesting when we look at "heads". 
 
 
 ```
@@ -64,11 +67,8 @@ p heads (@>1@, @==2@, ...) when flipping n coins
 heads :: (Int -> Bool) -> Int -> Probability
 heads p n = (p . length . filter (==1)) ?? coins n
 ```
-
-
 ```
 ghci> heads (>=2) 4
 11 % 16
 
 ```
-
