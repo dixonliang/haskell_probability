@@ -1,11 +1,11 @@
-# Exploration of probability Package for Haskell
+# Additions to probability Package for Haskell
 
-This repo contains an exploration exercise of the probability package in Haskell. The package was developed by Martin Erwig and Steve Kollmansberger of Oregon State University. 
+This repo contains a walkthrough of two additions I made to the probability package in Haskell. The package was developed by Martin Erwig and Steve Kollmansberger of Oregon State University. 
 
 The documentation for the package can be found here: https://hackage.haskell.org/package/probability
 The original paper for the package can be found here: http://web.engr.oregonstate.edu/~erwig/papers/PFP_JFP06.pdf
 
-With the use of this package, we can leverage the advantages of Haskell to solve discrete probability problems with efficent and concise programs. I have explored the package and contributed additions with the following files.
+With the use of this package, we can leverage the advantages of Haskell to solve discrete probability problems with efficent and concise programs. I made the additions with the following files.
 
 1) **Monty Hall Problem with Additional Door**: I modified the original Monty Hall problem by adding an additional door to the constructor. This file behaves exactly as outlined in the documentation. 
 
