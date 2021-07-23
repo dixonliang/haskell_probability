@@ -23,6 +23,18 @@ A popular problem in probability theory is called the "Monty Hall Problem". In t
 
 The answer to this problem is yes (the contestant should switch doors). 
 
+
+
+```
+data Outcome = Win | Lose
+firstChoice :: Dist Outcome
+firstChoice = uniform [Win,Lose,Lose]
+
+
+
+
+```
+
 #### Additional Doors
 
 As mentioned in the original paper, it was very easy to change the distribution of the game. This was done by simply adding another door to the "Door" constructor. 
@@ -33,12 +45,28 @@ data Door = A | B | C | D
 
 doors :: [Door]
 doors = [A,B,C,D]
+```
 
+
+```
 firstChoice :: Dist Outcome
 firstChoice = Dist.uniform [Win,Lose,Lose,Lose]
 ```
+
 With the additional door, the game choices changes to 
- 
+
+
+```
+firstChoice
+fromFreqs [(Lose, 75.0%),(Win, 25.0%)]
+
+eval switch
+fromFreqs [(Lose, 62.5%),(Win, 37.5%)]
+```
+
+So we can conclude that with the additional door, the contestant should switch to one of the two other doors if given the choice. The switching to one of the two other doors will increase the contestant's chances of winning by 12.5%. 
+
+
 ## Coin Flip
 
 In the probability Package, one of the programs included is Dice which replicates the uniform distribution of rolling dice or die. I used this template to create a similar program, but for flipping a coin. As with the Dice program, a uniform distribution is applied in the constructor. Instead of modeling six sides of a dice, we simply model the two sides of a coin, with 1 being Heads and 2 being Tails as per below. 
